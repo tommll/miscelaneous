@@ -11,7 +11,6 @@ def rotate_brute_force(matrix, n):
     for row in range(n):
         for j in range(n):
             col = n - 1 - row
-            print(row, j , 'to', j, col)
             ans[j][col] = matrix[row][j]
     
     return ans
