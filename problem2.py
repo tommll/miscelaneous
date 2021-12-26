@@ -2,6 +2,7 @@ def print_matrix(matrix):
     for row in matrix:
         print(row)
 
+######## BRUTE FORCE SOLUTON ########
 
 def rotate_brute_force(matrix, n):
     ans = []
@@ -15,6 +16,12 @@ def rotate_brute_force(matrix, n):
     
     return ans
 
+matrix = [['A', 'B', 'C'],
+          ['D','E', 'F'],
+          ['G','H', 'I']]
+print_matrix(rotate_brute_force(matrix, 3))
+
+######## INPLACE SOLUTON ########
 def rotate_4_item(matrix, x1, y1, x2, y2, x3, y3, x4, y4):
     # print('rotate_4_item:', x1, y1, x2, y2, x3, y3, x4, y4)
     tmp = matrix[x1][y1]
@@ -43,7 +50,7 @@ def rotate_4_times_at_index(matrix, n, x0, y0, x, y):
 
     return matrix
 
-def rotate_90(matrix, n):
+def rotate_inplace(matrix, n):
     for i in range(n):
         if n - i * 2 - 1 <= 0:
             break
@@ -60,9 +67,5 @@ matrix = [[1,2,3,4,5],
           [16,17,18,19,20],
           [21,22,23,24,25]]
           
-print_matrix(rotate_90(matrix, 5))
+print_matrix(rotate_inplace(matrix, 5))
 
-matrix = [['A', 'B', 'C'],
-          ['D','E', 'F'],
-          ['G','H', 'I']]
-print_matrix(rotate_brute_force(matrix, 3))
